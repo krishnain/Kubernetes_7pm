@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-app-deployment
+  labels:
+    author: intelliqit
+    name: redis-app
+spec:
+  selector:
+    matchLabels:
+      name: redis-app
+  template:
+    metadata:
+      name: redis-app-pod
+      labels:
+        name: redis-app
+    spec:
+      containers:
+        - name: my-redis-app
+          image: redis
+...
+
+
+

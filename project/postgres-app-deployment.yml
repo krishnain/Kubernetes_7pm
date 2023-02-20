@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-app-deployment
+  labels:
+    author: intelliqit
+    name: postgres-app
+spec:
+  selector:
+    matchLabels:
+      name: postgres-app
+  template:
+    metadata:
+      name: postgres-app-pod
+      labels:
+        name: postgres-app
+    spec:
+      containers:
+        - name: my-postgres-app
+          image: postgres
+          env:
+            - name: POSTGRES_PASSWORD
+              value: intelliqit
+            - name: POSTGRES_USER
+              value: myuser
+            - name: POSTGRES_DB
+              value: mydb
+...
+
+
+

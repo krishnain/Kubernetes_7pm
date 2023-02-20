@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-app-deployment
+  labels:
+    author: intelliqit
+    name: result-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: result-app
+  template:
+    metadata:
+      name: result-app-pod
+      labels:
+        name: result-app
+    spec:
+      containers:
+        - name: my-result-app
+          image: dockersamples/examplevotingapp_result
+... 
+
+
+
+
+

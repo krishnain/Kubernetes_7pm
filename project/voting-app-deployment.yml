@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: voting-app-deployment
+  labels:
+    author: intelliqit
+    name: voting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      name: voting-app
+  template:
+    metadata:
+      name: voting-app-pod
+      labels:
+        name: voting-app
+    spec:
+      containers:
+        - name: my-voting-app
+          image: dockersamples/examplevotingapp_vote
+...
+
+
+
+
