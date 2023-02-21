@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: result-app
+  name: result-app
+spec:
+  ports:
+  - name: "6060"
+    port: 6060
+    targetPort: 80
+  selector:
+    io.kompose.service: result-app
+status:
+  loadBalancer: {}

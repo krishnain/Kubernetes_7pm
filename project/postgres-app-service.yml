@@ -6,7 +6,7 @@ metadata:
   labels:
     author: intelliqit
 spec:
-  port:
+  ports:
     - targetPort: 5432
       port: 5432
   selector:
