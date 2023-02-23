@@ -12,6 +12,5 @@ spec:
       port: 80
       nodePort: 30008
   selector:
-    author: intelliqit
     type: webserver
 

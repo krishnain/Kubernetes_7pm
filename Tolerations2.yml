@@ -1,0 +1,28 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: httpd-rs
+  labels:
+    type: webserver
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      type: webserver
+  template:
+    metadata:
+      name: httpd-pod
+      labels:
+        type: webserver
+    spec:
+      containers:
+        - name: myhttpd
+          image: httpd
+      tolerations:
+        - key: slave1
+          value: intelliqit1
+          operator: Equal
+          effect: NoSchedule
+...
+          
